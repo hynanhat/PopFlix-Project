@@ -7,45 +7,80 @@
 
 .movieList h2 {
   margin: 10px 0;
-  /* Bạn có thể thêm màu pastel/đỏ ở đây nếu muốn */
-  /* color: var(--primary-color, #e50914); */
 }
 
 .movieList__posters {
-  display: flex;
-  overflow-y: hidden; /* Ẩn cuộn dọc */
-  overflow-x: scroll; /* Bật cuộn ngang */
-  padding: 20px;
+  /* XÓA: display: flex, overflow-y, overflow-x 
+    Chúng ta giữ lại padding để slider có không gian
+  */
+  padding: 20px 0; /* Giữ padding dọc, slider tự lo padding ngang */
 }
 
-/* Tùy chỉnh thanh cuộn */
-.movieList__posters::-webkit-scrollbar {
-  height: 8px;
+/* XÓA: Toàn bộ tùy chỉnh scrollbar (::-webkit-scrollbar...) 
+  vì chúng ta không còn thanh cuộn nữa.
+*/
+
+
+/* === CSS CHO REACT-SLICK === */
+
+/* react-slick bọc mỗi slide trong cấu trúc: .slick-slide > div
+  Chúng ta thêm padding vào "div" trung gian đó để tạo khoảng cách
+*/
+.movieList__posters .slick-slide > div {
+  padding: 0 5px; /* Tạo 5px mỗi bên -> 10px khoảng cách giữa các poster */
 }
 
-.movieList__posters::-webkit-scrollbar-thumb {
-  background-color: #333;
-  border-radius: 4px;
-}
-
-
+/* Thẻ Link <a> */
 .movieList__posters a {
-  flex-shrink: 0; 
-  width: 180px;
-  margin-right: 10px; 
+  /* XÓA: flex-shrink, width, margin-right (Slick tự xử lý) */
+  
   transition: transform 450ms;
-  display: block; 
+  display: block;
 }
 
 .movieList__posters a:hover {
-  transform: scale(1.08); 
+  transform: scale(1.08); /* Giữ hiệu ứng hover này */
 }
 
-
+/* Ảnh poster */
 .movieList__poster {
-  width: 100%; 
+  width: 100%; /* QUAN TRỌNG: Giữ 100% để vừa với slide */
   object-fit: cover; 
   height: 270px; 
   max-height: 270px;
   border-radius: 4px; 
+}
+
+/* TÙY CHỈNH MŨI TÊN (Nâng cao):
+  Mũi tên mặc định của react-slick có thể hơi mờ hoặc xấu.
+  Bạn có thể dùng CSS để tùy chỉnh chúng nếu muốn.
+*/
+.movieList__posters .slick-prev,
+.movieList__posters .slick-next {
+  /* Ví dụ: làm cho mũi tên to hơn và màu trắng */
+  font-size: 0; /* Ẩn text mặc định */
+  width: 30px;
+  height: 30px;
+  z-index: 1; /* Đảm bảo nó nổi lên trên */
+}
+
+.movieList__posters .slick-prev:before,
+.movieList__posters .slick-next:before {
+  font-size: 30px; /* Kích thước icon mũi tên */
+  color: white; /* Màu mũi tên */
+  opacity: 0.75; /* Độ mờ */
+}
+
+.movieList__posters .slick-prev { left: 5px; } /* Đẩy mũi tên trái sát vào */
+.movieList__posters .slick-next { right: 5px; } /* Đẩy mũi tên phải sát vào */
+
+.movieList__titleLink {
+  text-decoration: none; /* Bỏ gạch chân */
+  color: white; /* Kế thừa màu trắng */
+  transition: color 0.3s ease; /* Thêm hiệu ứng chuyển màu */
+}
+
+/* Thêm hiệu ứng hover vào h2 khi rê chuột vào Link */
+.movieList__titleLink:hover h2 {
+  color: #e50914; /* Ví dụ: đổi sang màu đỏ khi hover */
 }

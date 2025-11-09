@@ -15,7 +15,7 @@ function HomePage() {
       {/* Các hàng phim */}
       <MovieList 
         title="Phim Mới" 
-        fetchUrl="/danh-sach/phim-moi-cap-nhat?page=1" // API này hoạt động, giữ nguyên
+        fetchUrl="/danh-sach/phim-moi-cap-nhat?page=1&limit=20" // API này hoạt động, giữ nguyên
       />
       
       {/* === SỬA CÁC URL BÊN DƯỚI === */}

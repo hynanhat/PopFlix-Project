@@ -51,7 +51,14 @@ function AppRoutes() {
       
       <Route path="/phim/:slug" element={<ProtectedRoute><DetailPage /></ProtectedRoute>} />
       <Route path="/xem-phim/:slug" element={<ProtectedRoute><PhimPage /></ProtectedRoute>} />
-      
+      <Route 
+        path="/danh-sach/:slug" 
+        element={<ProtectedRoute><SearchPage /></ProtectedRoute>} 
+      />
+      <Route 
+        path="/the-loai/:slug" 
+        element={<ProtectedRoute><SearchPage /></ProtectedRoute>} 
+      />
     </Routes>
   );
 }
