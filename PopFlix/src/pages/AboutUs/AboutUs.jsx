@@ -8,13 +8,13 @@ function AboutUs() {
     <div className="aboutPage">
       <Navbar />
       <div className="aboutPage__container">
-        <h1 className="aboutPage__title">Về PopFlix</h1>
+        <h1 className="aboutPage__title">PopFlix</h1>
         <p>
-          PopFlix là một dự án đồ án môn học được xây dựng bằng ReactJS
-          cho phần frontend. Backend được sử dụng Nodejs và Expressjs.
+          PopFlix là một project môn học <strong>Các công nghệ lập trình hiện đại</strong>  được xây dựng bằng ReactJS
+          cho phần frontend và Backend được sử dụng Nodejs và Expressjs. Ngoài ra chúng em còn sử dụng MongoDB để lưu trữ thông tin người dùng.
         </p>
         <p>
-          Trang web này sử dụng API từ <strong>The Movie Database (TMDB)</strong>
+          Trang web này sử dụng API từ <strong> kkphim.com</strong> - API dành cho nhà phát triển website xem phim 
           để hiển thị thông tin phim, poster, và các danh sách phim thịnh hành.
         </p>
         <p>
