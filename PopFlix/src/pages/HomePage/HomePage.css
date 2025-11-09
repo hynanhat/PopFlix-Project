@@ -1,0 +1,8 @@
+.homePage {
+  background-color: #111;
+}
+
+.movieList h2 {
+  margin: 10px 0;
+  color: var(--primary-color); 
+}

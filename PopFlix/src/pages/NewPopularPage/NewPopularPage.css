@@ -1,0 +1,34 @@
+.newPopularPage {
+  padding-top: 70px;
+}
+
+.newPopularPage__content {
+  padding: 20px 40px;
+}
+
+.newPopularPage__content h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color, #A7D7C5);
+  margin-bottom: 20px;
+}
+
+.newPopularPage__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.newPopularPage__posterContainer {
+  width: 100%;
+}
+
+.newPopularPage__poster {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 450ms;
+}
+
+.newPopularPage__poster:hover {
+  transform: scale(1.08);
+}

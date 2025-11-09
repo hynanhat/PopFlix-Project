@@ -1,0 +1,13 @@
+# Bỏ qua các file hệ thống
+.DS_Store
+
+# --- Frontend (PopFlix) ---
+PopFlix/node_modules
+PopFlix/dist
+PopFlix/.vite/
+
+# --- Backend (server) ---
+server/node_modules
+
+# !! CỰC KỲ QUAN TRỌNG: Bỏ qua file chứa mật khẩu database !!
+server/.env

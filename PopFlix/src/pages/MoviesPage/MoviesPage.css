@@ -1,0 +1,38 @@
+.moviesPage {
+  padding-top: 70px; /* Bù cho Navbar */
+}
+
+.moviesPage__content {
+  padding: 20px 40px;
+}
+
+.moviesPage__content h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color, #A7D7C5);
+  margin-bottom: 20px;
+}
+
+.moviesPage__grid {
+  display: grid;
+  /* Grid tự động:
+     - auto-fill: Tự điền nhiều cột nhất có thể
+     - minmax(180px, 1fr): Mỗi cột rộng tối thiểu 180px, tối đa 1fr
+  */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px; /* Khoảng cách giữa các poster */
+}
+
+.moviesPage__posterContainer {
+  width: 100%;
+}
+
+.moviesPage__poster {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 450ms;
+}
+
+.moviesPage__poster:hover {
+  transform: scale(1.08);
+}

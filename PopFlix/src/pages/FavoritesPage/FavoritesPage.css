@@ -1,0 +1,36 @@
+.favoritesPage {
+  padding-top: 70px; /* Bù cho Navbar */
+}
+
+.favoritesPage__content {
+
+  padding: 20px 40px;
+}
+
+.favoritesPage__content h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color, #A7D7C5);
+  margin-bottom: 20px;
+}
+
+/* Layout lưới cho poster */
+.favoritesPage__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.favoritesPage__posterContainer {
+  width: 100%;
+}
+
+.favoritesPage__poster {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 450ms;
+}
+
+.favoritesPage__poster:hover {
+  transform: scale(1.08);
+}

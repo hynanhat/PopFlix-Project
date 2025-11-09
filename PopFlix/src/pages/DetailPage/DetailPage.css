@@ -1,0 +1,202 @@
+/* src/pages/DetailPage/DetailPage.css */
+
+.detailPage {
+  color: white;
+  padding-bottom: 50px;
+}
+
+.detailPage--loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+/* 1. Ảnh nền (Backdrop) */
+.detailPage__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  background-size: cover;
+  background-position: center top;
+  z-index: -2; /* Nằm dưới cùng */
+}
+
+/* Lớp phủ mờ */
+.detailPage__fadeBottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
+  z-index: -1; /* Nằm trên ảnh nền */
+}
+
+/* 2. Nội dung (Tóm tắt) */
+.detailPage__content {
+  display: flex;
+  padding-top: 20vh; /* Đẩy nội dung xuống (QUAN TRỌNG) */
+  padding-left: 40px;
+  padding-right: 40px;
+  gap: 30px;
+  
+  /* Đảm bảo nó nằm trên lớp phủ mờ */
+  position: relative; 
+  z-index: 10;
+}
+
+.detailPage__poster {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.detailPage__info {
+  flex: 1;
+}
+
+.detailPage__info h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.detailPage__meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: #c4c4c4;
+  margin-bottom: 20px;
+}
+
+.detailPage__overview {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* 3. Trailer */
+.detailPage__trailerSection {
+  padding: 40px;
+  
+  /* Đảm bảo nó nằm trên lớp phủ mờ */
+  position: relative;
+  z-index: 10;
+}
+
+.detailPage__trailerSection h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color, #A7D7C5);
+  margin-bottom: 20px;
+}
+
+/* CSS cho video responsive */
+.player__wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Tỷ lệ 16:9 */
+}
+
+.react__player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.playerError {
+  color: #ffc0cb; /* Màu hồng nhạt */
+  background-color: rgba(255, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 4px;
+}
+.detailPage__watchButton {
+  display: inline-block;
+  background-color: var(--primary-color, #A7D7C5); /* Dùng màu chủ đạo */
+  color: var(--background-dark, #2C3E50); /* Dùng màu nền tối */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 20px; /* Tạo khoảng cách với phần mô tả */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.detailPage__watchButton:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+}
+/* Bọc 2 nút Xem Phim và Yêu thích */
+.detailPage__actions {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Khoảng cách giữa 2 nút */
+  margin-top: 20px;
+}
+
+/* Sửa nút Xem Phim (để chung hàng) */
+.detailPage__watchButton {
+  display: inline-block;
+  background-color: var(--primary-color, #A7D7C5);
+  color: var(--background-dark, #2C3E50);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  /* BỎ margin-top */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.detailPage__watchButton:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* CSS cho nút Yêu thích mới */
+.detailPage__favoriteButton {
+  display: inline-block;
+  background-color: gray; /* Màu xám mờ */
+  color: white;
+  padding: 12px 20px ;
+  margin: 20px 0px 0 0px; /* Cách nút Xem Phim 10px */
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  /* BỎ margin-top */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.detailPage__favoriteButton:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Khi đang ở trạng thái active (đã thích) */
+.detailPage__favoriteButton.active {
+  background-color: #A7D7C5; /* Màu chủ đạo */
+  color: var(--background-dark);
+  border-color: #A7D7C5;
+}
+
+.detailPage__favoriteButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

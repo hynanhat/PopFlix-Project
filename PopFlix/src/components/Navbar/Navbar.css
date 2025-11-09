@@ -1,0 +1,112 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 40px;
+  height: 50px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  transition: background-color 0.3s ease-in;
+  box-sizing: border-box;
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+}
+
+/* Tạm thời dùng chữ thay logo */
+.navbar__logoText {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #e5e5e5;
+}
+
+.navbar__links li {
+  margin-left: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text-light); /* <-- Sửa thành màu này */
+  transition: color 0.3s ease; /* Thêm hiệu ứng chuyển màu cho mượt */
+}
+
+.navbar__links li:hover {
+  color: var(--primary-color);
+  opacity: 0.8;
+}
+
+.navbar__links li a {
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar__links li a:visited {
+  color: var(--text-light); 
+  text-decoration: none; 
+}
+
+.navbar__links li a:hover {
+  color: var(--primary-color, #A7D7C5); 
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  
+}
+
+.navbar__search {
+  display: flex;
+}
+
+.navbar__search input {
+  padding: 5px 10px;
+  border: 1px solid #333;
+  background-color: #111;
+  color: white;
+  border-radius: 4px 0 0 4px;
+}
+
+.navbar__search button {
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-left: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+.navbar__loginButton {
+  background-color: var(--primary-color, #A7D7C5);
+  color: var(--background-dark, #2C3E50);
+  padding: 7px 15px; 
+  border: none;
+  border-radius: 4px;
+  text-decoration: none; 
+  font-weight: 600; 
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap; 
+}
+
+.navbar__loginButton:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 80%, black);
+  color: var(--text-light, white);
+}

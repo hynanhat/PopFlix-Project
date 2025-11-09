@@ -1,0 +1,71 @@
+/* src/pages/PhimPage/PhimPage.css */
+
+/* Container chính (căn giữa, co giãn) */
+.watch-area-container {
+  max-width: 1280px;
+  margin: 20px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.watch-area-container h1 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+/* Container của video player */
+.video-player-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden; /* Giữ bo góc cho video */
+}
+
+.video-player-wrapper video {
+  width: 100%;
+  display: block;
+}
+
+/* Khu vực chọn tập */
+.episode-selector {
+  margin-top: 30px;
+}
+
+.episode-selector h3 {
+  color: var(--primary-color, #A7D7C5);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--background-light, #34495E);
+  padding-bottom: 10px;
+}
+
+.episode-list {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các nút xuống dòng */
+  gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+.episode-button {
+  background-color: var(--background-light, #34495E);
+  color: var(--text-light, #F1F1F1);
+  border: 1px solid var(--background-light, #34495E);
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.episode-button:hover {
+  background-color: var(--primary-color, #A7D7C5);
+  color: var(--background-dark, #2C3E50);
+}
+
+/* Nút đang active (tập đang xem) */
+.episode-button.active {
+  background-color: var(--primary-color, #A7D7C5);
+  color: var(--background-dark, #2C3E50);
+  border-color: var(--primary-color, #A7D7C5);
+  font-weight: 700;
+}

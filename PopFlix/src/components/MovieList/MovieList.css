@@ -1,0 +1,51 @@
+/* src/components/MovieList/MovieList.css */
+
+.movieList {
+  margin-left: 20px;
+  color: white;
+}
+
+.movieList h2 {
+  margin: 10px 0;
+  /* Bạn có thể thêm màu pastel/đỏ ở đây nếu muốn */
+  /* color: var(--primary-color, #e50914); */
+}
+
+.movieList__posters {
+  display: flex;
+  overflow-y: hidden; /* Ẩn cuộn dọc */
+  overflow-x: scroll; /* Bật cuộn ngang */
+  padding: 20px;
+}
+
+/* Tùy chỉnh thanh cuộn */
+.movieList__posters::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movieList__posters::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 4px;
+}
+
+
+.movieList__posters a {
+  flex-shrink: 0; 
+  width: 180px;
+  margin-right: 10px; 
+  transition: transform 450ms;
+  display: block; 
+}
+
+.movieList__posters a:hover {
+  transform: scale(1.08); 
+}
+
+
+.movieList__poster {
+  width: 100%; 
+  object-fit: cover; 
+  height: 270px; 
+  max-height: 270px;
+  border-radius: 4px; 
+}
